@@ -34,9 +34,31 @@ class Product{
     getPrice() {
      return `$${formatCurrency(this.priceCents)}`
     }
+
+    extraInfoHTML(){
+      return '';
+    }
 }
 
- export const products = [
+class clothing extends Product{
+ sizeChartLink;
+
+ constructor(productDetails) {
+  super(productDetails);
+  this.sizeChartLink = productDetails.sizeChartLink;
+ }
+
+
+extraInfoHTML() {
+  return `
+  <a href="${this.sizeChartLink}" target="_blank"
+  >Size Chart
+  </a>
+  `;
+}
+}
+
+export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
     image: "images/products/athletic-cotton-socks-6-pairs.jpg",
@@ -696,5 +718,8 @@ class Product{
     ]
   }
 ].map((productDetails) =>{
+  if(productDetails.type === 'clothing') {
+    return new clothing(productDetails);
+  }
   return new Product(productDetails);
 });
