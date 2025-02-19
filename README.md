@@ -20,7 +20,7 @@ This is an **Amazon clone** built using **HTML, CSS, and JavaScript** by followi
 
 2. Open the project folder in VS Code (or any other text editor you prefer).
 
-3. Run the project by opening index.html in your browser.
+3. Run the project by opening amazon.html in your browser.
 
 🛠️ Technologies Used
 HTML - Structure of the webpage
